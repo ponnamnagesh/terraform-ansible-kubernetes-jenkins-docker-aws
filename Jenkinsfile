@@ -1,12 +1,7 @@
 pipeline{
 
     agent any
-
-    tools {
-        terraform 'terraform'
-    }
-
-
+    
     stages {
         stage('SCM Checkout'){
             steps {
@@ -14,7 +9,7 @@ pipeline{
                 sh 'rm -rf terraform-ansible-kubernetes-jenkins-docker-aws'
 
                 // clone the repository from github
-                sh 'git clone https://github.com/jayjay2626/terraform-ansible-kubernetes-jenkins-docker-aws.git'
+                sh 'git clone https://github.com/ponnamnagesh/terraform-ansible-kubernetes-jenkins-docker-aws.git'
             }
         }
         
