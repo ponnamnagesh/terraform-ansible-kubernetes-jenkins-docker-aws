@@ -23,7 +23,7 @@ pipeline{
                         sh 'docker build -t claimvisionecr .'
                         //sh 'docker tag latest:$BUILD_NUMBER'
                         //sh 'docker tag latest[:$BUILD_NUMBER]'
-                        docker tag claimvisionecr:latest 004738182300.dkr.ecr.us-east-2.amazonaws.com/claimvisionecr:latest
+                        sh 'docker tag claimvisionecr:latest 004738182300.dkr.ecr.us-east-2.amazonaws.com/claimvisionecr:latest'
                         echo "Image successfully built"
                     }
                 }
