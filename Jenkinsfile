@@ -38,7 +38,7 @@ pipeline{
                 
                 }
             }
-        }
+        
 
         stage('Starting Kubernetes') {
             steps {
@@ -100,3 +100,4 @@ pipeline{
 
 
     }
+}
