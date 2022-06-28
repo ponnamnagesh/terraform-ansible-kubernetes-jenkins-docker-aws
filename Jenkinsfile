@@ -20,9 +20,10 @@ pipeline{
                     dir('./docker') {
                         //  Building new image
                         //sh 'docker image build -t $DOCKER_HUB_REPO:latest .'
-                        sh 'docker build -t latest .'
+                        sh 'docker build -t claimvisionecr .'
                         //sh 'docker tag latest:$BUILD_NUMBER'
                         //sh 'docker tag latest[:$BUILD_NUMBER]'
+                        docker tag claimvisionecr:latest 004738182300.dkr.ecr.us-east-2.amazonaws.com/claimvisionecr:latest
                         echo "Image successfully built"
                     }
                 }
@@ -32,8 +33,9 @@ pipeline{
         stage('Updating Image On ECR'){
             steps {
                 
-                docker push 004738182300.dkr.ecr.us-east-2.amazonaws.com/mywebapp:latest
-                    echo "Image has been updated on ecr"
+                docker push 004738182300.dkr.ecr.us-east-2.amazonaws.com/claimvisionecr:latest
+                echo "Image has been updated on ecr"
+            }
                 }
             }
         }
