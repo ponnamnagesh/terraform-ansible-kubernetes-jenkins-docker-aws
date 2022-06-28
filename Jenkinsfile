@@ -29,17 +29,11 @@ pipeline{
             }
         }
 
-        stage('Updating Image On Dockerhub'){
+        stage('Updating Image On ECR'){
             steps {
-                script {
-                    //  Pushing Image to Repository
-                    withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'USER1', passwordVariable: 'PASS1')]) {
-                    sh 'docker login -u "$USER1" -p "$PASS1"'
-                    }
-                    sh 'docker push $DOCKER_HUB_REPO:$BUILD_NUMBER'
-                    sh 'docker push $DOCKER_HUB_REPO:latest'
                 
-                    echo "Image has been updated on dockerhub"
+                docker push 004738182300.dkr.ecr.us-east-2.amazonaws.com/mywebapp:latest
+                    echo "Image has been updated on ecr"
                 }
             }
         }
