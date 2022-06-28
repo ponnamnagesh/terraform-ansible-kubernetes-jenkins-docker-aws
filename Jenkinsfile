@@ -6,11 +6,6 @@ pipeline{
         terraform 'terraform'
     }
 
-    environment {
-        DOCKER_HUB_REPO = "rangeley826/flaskapp"
-        CONTAINER_NAME = "flaskapp"
-        REGISTRY_CREDENTIAL = "dockerhub"
-    }
 
     stages {
         stage('SCM Checkout'){
