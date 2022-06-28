@@ -21,7 +21,7 @@ pipeline{
                         //  Building new image
                         //sh 'docker image build -t $DOCKER_HUB_REPO:latest .'
                         sh 'docker build -t latest .'
-                        sh 'docker image tag $BUILD_NUMBER:latest'
+                        sh 'docker tag $BUILD_NUMBER:latest'
                         echo "Image successfully built"
                     }
                 }
