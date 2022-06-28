@@ -20,8 +20,8 @@ pipeline{
                     dir('./docker') {
                         //  Building new image
                         //sh 'docker image build -t $DOCKER_HUB_REPO:latest .'
-                        sh 'docker image build -t latest'
-                        sh 'docker image tag latest'
+                        sh 'docker build -t latest'
+                        sh 'docker image tag $BUILD_NUMBER:latest'
                         echo "Image successfully built"
                     }
                 }
