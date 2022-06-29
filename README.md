@@ -24,3 +24,4 @@
 ###### A Continuous Integration and Continuous Deployment Pipeline with Jenkins, Terraform, Ansible, Kubernetes, AWS, Docker, and of course, github to host our repositories to allow jenkins with a webhook to always check when there is a new push/commit to the repo. And then, built the application and package everything and deploy the application
 
  
+ Added credentials helper for secure pupropses to upload images
