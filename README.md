@@ -25,3 +25,5 @@
 
  
  Added credentials helper for secure pupropses to upload images
+ 
+ docker system prune -a --volumes
