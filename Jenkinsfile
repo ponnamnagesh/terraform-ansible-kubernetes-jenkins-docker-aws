@@ -32,7 +32,7 @@ pipeline{
 
         stage('Updating Image On ECR'){
             steps {
-                
+                sh 'sudo su -'
                 sh 'docker push 004738182300.dkr.ecr.us-east-2.amazonaws.com/claimvisionecr:latest'
                 echo "Image has been updated on ecr"
                 
