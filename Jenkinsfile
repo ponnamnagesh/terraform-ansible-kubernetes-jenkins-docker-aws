@@ -39,18 +39,6 @@ pipeline{
                 }
             }
         
-
-        stage('Starting Kubernetes') {
-            steps {
-                script{
-                    
-                    sh 'minikube start'
-                    echo 'kubernetes started successfully'
-                    
-                }
-            }
-        }
-        
         stage('Terraform init') {
             steps {
                 script{
