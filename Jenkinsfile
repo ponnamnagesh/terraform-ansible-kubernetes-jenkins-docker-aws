@@ -20,6 +20,7 @@ pipeline{
                     dir('./docker') {
                         //  Building new image
                         //sh 'docker image build -t $DOCKER_HUB_REPO:latest .'
+                        sh 'aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 004738182300.dkr.ecr.us-east-2.amazonaws.com'
                         sh 'docker build -t claimvisionecr .'
                         //sh 'docker tag latest:$BUILD_NUMBER'
                         //sh 'docker tag latest[:$BUILD_NUMBER]'
